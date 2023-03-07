@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "319939830324",
+    "project_id": "gdsc-nu",
+    "storage_bucket": "gdsc-nu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319939830324:android:06916d2a903876792fa061",
+        "android_client_info": {
+          "package_name": "com.example.gdsc_nu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319939830324-icgo7lqd2eha7mu1bf1h5daak6o4ip6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA19gqW1Y8sQq19u1ow1XJqaugpujjfHwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319939830324-icgo7lqd2eha7mu1bf1h5daak6o4ip6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
