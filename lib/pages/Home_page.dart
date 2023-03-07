@@ -99,12 +99,7 @@ class _HomePageState extends State<HomePage> {
               endIndent: 10,
             ),
             Expanded(
-              // height: MediaQuery.of(context).size.height * 0.7,
-              child: ListView(
-                children: [
-                  
-                ],
-              ),
+              child: CircularProgressIndicator(),
             ),
           ],
         ),

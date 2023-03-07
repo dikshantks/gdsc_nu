@@ -1,5 +1,6 @@
 // import 'package:animated_text_kit/animated_text_kit.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../constant.dart';
@@ -11,6 +12,7 @@ class ChatWidget extends StatelessWidget {
   final int chatIndex;
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     return Column(
       children: [
         Material(
@@ -20,14 +22,12 @@ class ChatWidget extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  chatIndex == 0 ? "assets/brain.png" : "assets/chat.png",
-                  height: 45.0,
-                ),
-                // Icon(
-                //   chatIndex == 0 ? Icons.heat_pump_sharp : Icons.abc,
-                //   size: 40.0,
-                // ),
+                chatIndex == 0
+                    ? Image.network(
+                        user.photoURL!,
+                        height: 40,
+                      )
+                    : Image.asset("assets/chatgpt-logo.png", height: 40),
                 const SizedBox(
                   width: 8,
                 ),

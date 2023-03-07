@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gdsc_nu">
    <application
+        android:usesCleartextTraffic="true"
         android:label="gdsc_nu"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
@@ -30,5 +31,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
