@@ -22,17 +22,15 @@ class _ResourcesPageState extends State<ResourcesPage> {
       child: Scaffold(
         body: SafeArea(
           child: Column(
-            children: [
-              const resource_tab(),
+            children: const [
+              resource_tab(),
               Expanded(
                 child: TabBarView(
                   children: [
-                    const AppdevPage(),
-                    const Webdevpage(),
-                    Container(
-                      child: const Center(
-                        child: Text("projects"),
-                      ),
+                    AppdevPage(),
+                    Webdevpage(),
+                    Center(
+                      child: Text("projects"),
                     ),
                   ],
                 ),

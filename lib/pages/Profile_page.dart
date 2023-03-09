@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_nu/components/profile_img.dart';
-import 'package:gdsc_nu/pages/easter_egg.dart';
+import 'package:gdsc_nu/pages/testpages/easter_egg.dart';
 import 'package:gdsc_nu/services/google_signin.dart';
 import 'package:provider/provider.dart';
 

@@ -6,7 +6,7 @@ import 'package:gdsc_nu/models/gpt_models.dart';
 import '../services/api_services.dart';
 
 class ModelsProvider with ChangeNotifier {
-  String currentmodel = "ada";
+  String currentmodel = "text-curie-001";
   String get getcurrentmodel {
     return currentmodel;
   }

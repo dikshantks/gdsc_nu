@@ -33,8 +33,10 @@ class _FunPageState extends State<FunPage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          height: 500,
-          width: 500,
+          height: MediaQuery.of(context).size.height * .9,
+          width: MediaQuery.of(context).size.width * .9,
+          alignment: Alignment.center,
+          clipBehavior: Clip.antiAlias,
           child: VideoPlayer(_controller),
         ),
       ),

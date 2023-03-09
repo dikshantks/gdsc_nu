@@ -1,7 +1,6 @@
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_nu/constant.dart';
-import 'package:gdsc_nu/pages/pages_page.dart';
 import 'package:gdsc_nu/services/google_signin.dart';
 import 'package:provider/provider.dart';
 
@@ -31,12 +30,10 @@ class _LoginPageState extends State<LoginPage> {
                   maxWidth: 600,
                 ),
                 decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.fitWidth,
-                    image: Image.network(
-                      '',
-                    ).image,
-                  ),
+                  // image: DecorationImage(
+                  //   fit: BoxFit.fitWidth,
+
+                  // ),
                   shape: BoxShape.rectangle,
                 ),
                 child: Align(
@@ -101,16 +98,8 @@ class _LoginPageState extends State<LoginPage> {
                                                         context,
                                                         listen: false);
                                                 provider.googleLogin();
-
-                                                // Navigator.pushReplacement(
-                                                //   context,
-                                                //   MaterialPageRoute(
-                                                //     builder: (_) =>
-                                                //         BottomPage(),
-                                                //   ),
-                                                // );
                                               },
-                                              style: AuthButtonStyle(
+                                              style: const AuthButtonStyle(
                                                 buttonColor: kscaffhold2,
                                               ),
                                             ),

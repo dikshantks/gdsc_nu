@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gdsc_nu/components/event_card.dart';
+import 'package:gdsc_nu/models/event_model.dart';
+import 'package:provider/provider.dart';
 import '../components/profile_img.dart';
+import '../provider/event_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,13 +19,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
 
+    Eventmodel one = Eventmodel(
+        heading: "bruh ",
+        info: "gruhhh",
+        imgurl:
+            "https://fastly.picsum.photos/id/692/200/300.jpg?hmac=qoaBsJRR_eEfM9cuFXDECrJYjrebuLirYg5r7H_VVok",
+        url: "",
+        venue: "dgdfgdfgd");
+
+    final provider = Provider.of<EventProvider>(context);
+
+
     return Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -35,13 +49,13 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ProfileImg(),
                           Image.asset(
                             'assets/images/GDSC NIIT Logo.png',
                             width: 174.5,
                             height: 77.6,
                             fit: BoxFit.fitWidth,
                           ),
+                          ProfileImg(),
                         ],
                       ),
                     ),
@@ -99,8 +113,16 @@ class _HomePageState extends State<HomePage> {
               endIndent: 10,
             ),
             Expanded(
-              child: CircularProgressIndicator(),
-            ),
+                child: ListView(
+              physics: BouncingScrollPhysics(),
+              children: [
+                EventCard(one: one),
+                EventCard(one: one),
+                EventCard(one: one),
+                EventCard(one: one),
+                EventCard(one: one),
+              ],
+            )),
           ],
         ),
       ),

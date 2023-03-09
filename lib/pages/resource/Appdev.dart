@@ -1,6 +1,8 @@
 import 'package:accordion/accordion.dart';
 import 'package:flutter/material.dart';
+import 'package:gdsc_nu/components/resource_card.dart';
 import 'package:gdsc_nu/constant.dart';
+import 'package:gdsc_nu/pages/Resources_page.dart';
 
 class AppdevPage extends StatelessWidget {
   const AppdevPage({super.key});
@@ -9,62 +11,9 @@ class AppdevPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Accordion(
-          // flipRightIconIfOpen: false,
-          openAndCloseAnimation: true,
-          // maxOpenSections: 2,
-          headerBackgroundColorOpened: kscaffhold2,
-          headerPadding:
-              const EdgeInsets.symmetric(vertical: 7, horizontal: 15),
+        child: Column(
           children: [
-            AccordionSection(
-              leftIcon: const Icon(
-                Icons.one_k,
-                color: Colors.white,
-              ),
-              headerBackgroundColor: kscaffhold2,
-              header: const Text(
-                'Introduction',
-              ),
-              content: Text(
-                loremIpsum,
-                style: TextStyle(color: kprimary),
-              ),
-              contentHorizontalPadding: 20,
-              contentBorderWidth: 1,
-            ),
-            AccordionSection(
-              leftIcon: const Icon(
-                Icons.one_k,
-                color: Colors.white,
-              ),
-              headerBackgroundColor: kscaffhold2,
-              header: const Text(
-                'Introduction',
-              ),
-              content: Text(
-                loremIpsum,
-                style: TextStyle(color: kprimary),
-              ),
-              contentHorizontalPadding: 20,
-              contentBorderWidth: 1,
-            ),
-            AccordionSection(
-              leftIcon: const Icon(
-                Icons.one_k,
-                color: Colors.white,
-              ),
-              headerBackgroundColor: kscaffhold2,
-              header: const Text(
-                'Introduction',
-              ),
-              content: Text(
-                loremIpsum,
-                style: TextStyle(color: kprimary),
-              ),
-              contentHorizontalPadding: 20,
-              contentBorderWidth: 1,
-            ),
+            Resourcetab(),
           ],
         ),
       ),

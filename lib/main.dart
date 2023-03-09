@@ -5,6 +5,7 @@ import 'package:gdsc_nu/constant.dart';
 import 'package:gdsc_nu/pages/Login_page.dart';
 import 'package:gdsc_nu/pages/pages_page.dart';
 import 'package:gdsc_nu/provider/chat_provider.dart';
+import 'package:gdsc_nu/provider/event_provider.dart';
 import 'package:gdsc_nu/provider/models_provider.dart';
 import 'package:gdsc_nu/services/google_signin.dart';
 import 'package:provider/provider.dart';
@@ -31,8 +32,12 @@ class MainApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => ChatProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => EventProvider(),
+        ),
       ],
       child: MaterialApp(
+        // showSemanticsDebugger: true,
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kscaffhold,
         ),
@@ -41,17 +46,17 @@ class MainApp extends StatelessWidget {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (snapshot.hasError) {
-              return Center(
+              return const Center(
                 child: Text("Oops something went wrong"),
               );
             } else if (snapshot.hasData) {
-              return BottomPage();
+              return const BottomPage();
             } else {
-              return LoginPage();
+              return const LoginPage();
             }
           },
         ),

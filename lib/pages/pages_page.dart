@@ -19,7 +19,7 @@ class _BottomPageState extends State<BottomPage> {
   final pages = [
     const HomePage(),
     const ResourcesPage(),
-    ChatScreen(),
+    const ChatScreen(),
     const ProfilePage(),
   ];
   @override
@@ -38,17 +38,24 @@ class _BottomPageState extends State<BottomPage> {
           selectedIndex: index,
           destinations: const [
             NavigationDestination(
-                selectedIcon: Icon(Icons.home),
-                icon: Icon(Icons.home_outlined),
-                label: "Home"),
+              selectedIcon: Icon(Icons.home),
+              icon: Icon(Icons.home_outlined),
+              label: "Home",
+            ),
             NavigationDestination(
-                icon: FaIcon(FontAwesomeIcons.leanpub), label: "Resource"),
+              icon: FaIcon(FontAwesomeIcons.leanpub),
+              label: "Resource",
+            ),
             NavigationDestination(
-                selectedIcon: FaIcon(FontAwesomeIcons.commentDots),
-                icon: FaIcon(FontAwesomeIcons.comment),
-                label: "Kpt"),
+              selectedIcon: FaIcon(FontAwesomeIcons.commentDots),
+              icon: FaIcon(FontAwesomeIcons.comment),
+              label: "Kpt",
+            ),
             NavigationDestination(
-                icon: FaIcon(FontAwesomeIcons.personRifle), label: "Profile"),
+              selectedIcon: Icon(Icons.account_circle_rounded),
+              icon: Icon(Icons.account_circle_outlined),
+              label: "Profile",
+            ),
           ],
         ),
       ),
