@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_nu/components/event_card.dart';
 import 'package:gdsc_nu/models/event_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../components/profile_img.dart';
 import '../provider/event_provider.dart';
@@ -66,36 +67,36 @@ class _HomePageState extends State<HomePage> {
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                            child: Text(
-                              'Welcome,\n${user.displayName!}',
-                              style: ThemeData.dark()
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                    fontSize: 22.0,
-                                  ),
+                            child: RichText(
+                              text: TextSpan(
+                                style: GoogleFonts.roboto(
+                                  fontSize: 25.0,
+                                  color: Colors.white70,
+                                ),
+                                children: [
+                                  TextSpan(text: "Hello, "),
+                                  TextSpan(text: "${user.displayName}"),
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                            padding: EdgeInsets.only(left: 10.0, top: 10.0),
                             child: Text(
                               'Events',
-                              style: ThemeData.dark()
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                      fontSize: 32.0,
-                                      fontWeight: FontWeight.bold),
+                              style: GoogleFonts.roboto(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 30.0,
+                              ),
                             ),
                           ),
                         ],

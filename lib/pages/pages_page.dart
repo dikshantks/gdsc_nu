@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gdsc_nu/constant.dart';
 import 'package:gdsc_nu/pages/Home_page.dart';
 import 'package:gdsc_nu/pages/Profile_page.dart';
-import 'package:gdsc_nu/pages/Resources_page.dart';
+import 'package:gdsc_nu/pages/resource/Resources_page.dart';
 import 'package:gdsc_nu/pages/testpages/chat_screen.dart';
 
 class BottomPage extends StatefulWidget {
@@ -39,6 +39,7 @@ class _BottomPageState extends State<BottomPage> {
           ),
         ),
         child: NavigationBar(
+          
           onDestinationSelected: (index) => setState(() {
             this.index = index;
           }),
@@ -46,22 +47,35 @@ class _BottomPageState extends State<BottomPage> {
           destinations: const [
             NavigationDestination(
               selectedIcon: Icon(Icons.home),
-              icon: Icon(Icons.home_outlined),
+              icon: Icon(
+                Icons.home_outlined,
+                color: Colors.white54,
+              ),
               label: "Home",
             ),
             NavigationDestination(
               selectedIcon: Icon(Icons.book),
-              icon: Icon(Icons.book_outlined),
+              icon: Icon(
+                Icons.book_outlined,
+                color: Colors.white54,
+              ),
               label: "Resource",
             ),
             NavigationDestination(
               selectedIcon: FaIcon(FontAwesomeIcons.commentDots),
-              icon: FaIcon(FontAwesomeIcons.comment),
+              icon: FaIcon(
+                FontAwesomeIcons.comment,
+                color: Colors.white54,
+              ),
               label: "Kpt",
             ),
             NavigationDestination(
+
               selectedIcon: Icon(Icons.account_circle_rounded),
-              icon: Icon(Icons.account_circle_outlined),
+              icon: Icon(
+                Icons.account_circle_outlined,
+                color: Colors.white54,
+              ),
               label: "Profile",
             ),
           ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_nu/constant.dart';
-import 'package:gdsc_nu/pages/Roadmap.dart';
+import 'package:gdsc_nu/pages/resource/Roadmap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Resourcecard extends StatefulWidget {

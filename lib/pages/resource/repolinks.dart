@@ -1,11 +1,9 @@
-import 'package:accordion/accordion.dart';
 import 'package:flutter/material.dart';
-import 'package:gdsc_nu/components/resource_card.dart';
-import 'package:gdsc_nu/constant.dart';
-import 'package:gdsc_nu/pages/resource/Resources_page.dart';
 
-class AppdevPage extends StatelessWidget {
-  const AppdevPage({super.key});
+import '../../components/resource_card.dart';
+
+class Githubpage extends StatelessWidget {
+  const Githubpage({super.key});
 
   @override
   Widget build(BuildContext context) {

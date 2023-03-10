@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gdsc_nu/constant.dart';
 import 'package:gdsc_nu/pages/resource/Appdev.dart';
 import 'package:gdsc_nu/pages/resource/Webdev.dart';
+import 'package:gdsc_nu/pages/resource/repolinks.dart';
 
 class ResourcesPage extends StatefulWidget {
   static const resources = "resources";
@@ -29,9 +30,7 @@ class _ResourcesPageState extends State<ResourcesPage> {
                   children: [
                     AppdevPage(),
                     Webdevpage(),
-                    Center(
-                      child: Text("projects"),
-                    ),
+                    Githubpage(),
                   ],
                 ),
               ),
