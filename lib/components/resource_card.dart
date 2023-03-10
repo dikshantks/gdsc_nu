@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_nu/constant.dart';
+import 'package:gdsc_nu/pages/Roadmap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Resourcetab extends StatefulWidget {
-  const Resourcetab({super.key});
+class Resourcecard extends StatefulWidget {
+  const Resourcecard({super.key});
 
   @override
-  State<Resourcetab> createState() => _ResourcetabState();
+  State<Resourcecard> createState() => _ResourcecardState();
 }
 
-class _ResourcetabState extends State<Resourcetab> {
+class _ResourcecardState extends State<Resourcecard> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0, 0),
+      // alignment: AlignmentDirectional(0, 0),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16, 5, 16, 1),
+        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
@@ -23,18 +24,18 @@ class _ResourcetabState extends State<Resourcetab> {
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
               color: kscaffhold,
-              width: 0,
+              // width: 0,
             ),
           ),
           child: Padding(
-            padding:const  EdgeInsetsDirectional.fromSTEB(0, 12, 16, 12),
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 16, 12),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(0, -0.05),
+                  alignment: const AlignmentDirectional(0, -0.05),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                     child: Container(
@@ -57,23 +58,33 @@ class _ResourcetabState extends State<Resourcetab> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Header',
-                          style: GoogleFonts.roboto(),
+                          'Introduction',
+                          style: GoogleFonts.roboto(
+                            fontSize: 20.0,
+                            color: Colors.white70,
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
-                          child: Text(
-                              'FlutterFlow is a visual development platform that allows you to easily create beautiful and responsive user interfaces for your mobile and web applications. ',
-                              style: GoogleFonts.roboto()),
+                          child: Text('FlutterFlow . ',
+                              style: GoogleFonts.roboto(color: Colors.white60)),
                         ),
                       ],
                     ),
                   ),
                 ),
-                Icon(
-                  Icons.chevron_right_rounded,
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RoadMap(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.chevron_right_rounded),
                   color: Color(0xFF57636C),
-                  size: 24,
+                  iconSize: 24,
                 ),
               ],
             ),

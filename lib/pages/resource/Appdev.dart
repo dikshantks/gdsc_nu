@@ -13,7 +13,10 @@ class AppdevPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Resourcetab(),
+            Resourcecard(),
+            Resourcecard(),
+            Resourcecard(),
+            Resourcecard(),
           ],
         ),
       ),

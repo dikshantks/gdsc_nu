@@ -27,11 +27,18 @@ class _BottomPageState extends State<BottomPage> {
     return Scaffold(
       body: pages[index],
       bottomNavigationBar: NavigationBarTheme(
-        data: const NavigationBarThemeData(
+        data: NavigationBarThemeData(
           backgroundColor: kscaffhold2,
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+          elevation: 1.0,
+          indicatorColor: kprimary.withOpacity(0.2),
+          indicatorShape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(14.0),
+            ),
+          ),
         ),
         child: NavigationBar(
-          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           onDestinationSelected: (index) => setState(() {
             this.index = index;
           }),
@@ -43,7 +50,8 @@ class _BottomPageState extends State<BottomPage> {
               label: "Home",
             ),
             NavigationDestination(
-              icon: FaIcon(FontAwesomeIcons.leanpub),
+              selectedIcon: Icon(Icons.book),
+              icon: Icon(Icons.book_outlined),
               label: "Resource",
             ),
             NavigationDestination(

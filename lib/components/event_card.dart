@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gdsc_nu/models/event_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,8 +19,13 @@ class _EventCardState extends State<EventCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kscaffhold2,
-      height: 260,
+      decoration: BoxDecoration(
+        color: kscaffhold2,
+        borderRadius: BorderRadius.all(
+          Radius.circular(8.0),
+        ),
+      ),
+      height: 255.0,
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Column(
@@ -34,11 +40,12 @@ class _EventCardState extends State<EventCard> {
                 Align(
                   alignment: AlignmentDirectional(0, -1),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(0),
-                      bottomRight: Radius.circular(0),
-                      topLeft: Radius.circular(8),
-                      topRight: Radius.circular(8),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                      // bottomLeft: Radius.circular(0),
+                      // bottomRight: Radius.circular(0),
+                      // topLeft: Radius.circular(8),
+                      // topRight: Radius.circular(8),
                     ),
                     child: Image.network(
                       'https://images.unsplash.com/photo-1567850083672-65ae6c8a696b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fGNhbm5hYmlzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
@@ -61,8 +68,8 @@ class _EventCardState extends State<EventCard> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Icon(
-                              Icons.flutter_dash,
-                              color: Color(0xFF39D2C0),
+                              FaIcon(FontAwesomeIcons.code).icon,
+                              color: kprimary,
                               size: 24,
                             ),
                           ],
@@ -75,11 +82,17 @@ class _EventCardState extends State<EventCard> {
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  Color(0xFF4B39EF),
-                                  Color(0xFF39D2C0),
-                                  Color(0xFFFF5963)
+                                  Colors.blue,
+                                  Colors.red,
+                                  Colors.yellow,
+                                  Colors.green,
                                 ],
-                                stops: [0, 0.3, 1],
+                                stops: [
+                                  0.3,
+                                  1.3,
+                                  0.3,
+                                  1,
+                                ],
                                 begin: AlignmentDirectional(1, 0.98),
                                 end: AlignmentDirectional(-1, -0.98),
                               ),
@@ -114,10 +127,10 @@ class _EventCardState extends State<EventCard> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(16, 8, 0, 0),
             child: Text(
-              'Cannabis in Thailand',
+              'Intro to Github',
               style: GoogleFonts.roboto(
                 color: Colors.white70,
-                fontSize: 18,
+                fontSize: 20.0,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -125,7 +138,7 @@ class _EventCardState extends State<EventCard> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 0),
             child: Text(
-              'Thialand just legalized Cannabis in their country. But there’s more to the story. Do you think you know it?',
+              'AMRITANSHU CHUTIYA HAI ',
               style: GoogleFonts.roboto(
                 color: Color(0xFF57636C),
                 fontSize: 12,
@@ -139,11 +152,11 @@ class _EventCardState extends State<EventCard> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Text(
-                  '16 friends played',
+                  'Date: 30th Feb           Venue: LT201',
                   style: GoogleFonts.outfit(
-                    color: Color(0xFFFF5963),
-                    fontSize: 12,
-                    fontWeight: FontWeight.normal,
+                    color: kprimary.withBlue(150).withGreen(100),
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ],
