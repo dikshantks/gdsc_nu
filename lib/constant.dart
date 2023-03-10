@@ -12,7 +12,7 @@ Color cardCol = const Color.fromARGB(255, 54, 72, 79);
 String loremIpsum =
     '''Lorem ipsum is typically a corrupted version of 'De finibus bonorum et malorum', a 1st century BC text by the Roman statesman and philosopher Cicero, with words altered, added, and removed to make it nonsensical and improper Latin.''';
 
-String apiKey = "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";
+
 String baseUrl = "https://api.openai.com/v1";
 
 InputDecoration decorationOne = const InputDecoration(

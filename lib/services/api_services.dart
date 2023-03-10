@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:gdsc_nu/models/chat_model.dart';
 import 'package:http/http.dart' as https;
 
+import '../config.dart';
 import '../constant.dart';
 import '../models/gpt_models.dart';
 
