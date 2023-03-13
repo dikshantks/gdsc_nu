@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
                 constraints: const BoxConstraints(
                   maxWidth: 600,
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   // image: DecorationImage(
                   //   fit: BoxFit.fitWidth,
 

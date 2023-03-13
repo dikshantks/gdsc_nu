@@ -4,7 +4,14 @@ import 'package:gdsc_nu/pages/resource/Roadmap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Resourcecard extends StatefulWidget {
-  const Resourcecard({super.key});
+  Resourcecard({
+    super.key,
+    this.title = "",
+    this.content = "",
+    this.img = "",
+  });
+
+  String title, content, img;
 
   @override
   State<Resourcecard> createState() => _ResourcecardState();

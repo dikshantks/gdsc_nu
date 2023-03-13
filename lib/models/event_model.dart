@@ -16,8 +16,8 @@ class Eventmodel {
   });
 
   factory Eventmodel.fromSnapshot(
-      DocumentSnapshot<Map<String, dynamic>> documentsnapshot) {
-    final data = documentsnapshot.data()!;
+      QueryDocumentSnapshot<Map<String, dynamic>> documentsnapshot) {
+    final data = documentsnapshot.data();
     return Eventmodel(
       heading: data["heading"],
       info: data["info"],
@@ -28,6 +28,4 @@ class Eventmodel {
   }
 
   // final db = FirebaseFirestore.instance;
-
-
 }

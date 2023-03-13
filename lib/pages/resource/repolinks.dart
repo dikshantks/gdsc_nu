@@ -11,10 +11,18 @@ class Githubpage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Resourcecard(),
-            Resourcecard(),
-            Resourcecard(),
-            Resourcecard(),
+            Resourcecard(
+              title: "Beginners",
+            ),
+            Resourcecard(
+              title: "Intermidiate",
+            ),
+            Resourcecard(
+              title: "Advanced",
+            ),
+            Resourcecard(
+              title: "FAQ",
+            ),
           ],
         ),
       ),

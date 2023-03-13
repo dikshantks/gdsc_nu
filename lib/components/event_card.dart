@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors
+import 'dart:ffi';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gdsc_nu/models/event_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constant.dart';
 
@@ -16,6 +19,16 @@ class EventCard extends StatefulWidget {
 }
 
 class _EventCardState extends State<EventCard> {
+  Future<void> _launchurl(String Url) async {
+    final Uri uri = Uri.parse(Url);
+
+    if (!await launchUrl(
+      uri,
+    )) {
+      throw "cannot launch";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,7 +61,7 @@ class _EventCardState extends State<EventCard> {
                       // topRight: Radius.circular(8),
                     ),
                     child: Image.network(
-                      'https://images.unsplash.com/photo-1567850083672-65ae6c8a696b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fGNhbm5hYmlzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+                      widget.one.imgurl,
                       width: double.infinity,
                       height: 130,
                       fit: BoxFit.cover,
@@ -101,17 +114,22 @@ class _EventCardState extends State<EventCard> {
                             child: Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
-                              child: Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: Color(0xFF101213),
-                                  size: 32,
+                              child: GestureDetector(
+                                onTap: () {
+                                  _launchurl(widget.one.url);
+                                },
+                                child: Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.chevron_right_rounded,
+                                    color: Color(0xFF101213),
+                                    size: 32,
+                                  ),
                                 ),
                               ),
                             ),
@@ -127,7 +145,7 @@ class _EventCardState extends State<EventCard> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(16, 8, 0, 0),
             child: Text(
-              'Intro to Github',
+              widget.one.heading,
               style: GoogleFonts.roboto(
                 color: Colors.white70,
                 fontSize: 20.0,
@@ -138,7 +156,7 @@ class _EventCardState extends State<EventCard> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 0),
             child: Text(
-              'AMRITANSHU CHUTIYA HAI ',
+              widget.one.info,
               style: GoogleFonts.roboto(
                 color: Color(0xFF57636C),
                 fontSize: 12,
@@ -152,7 +170,7 @@ class _EventCardState extends State<EventCard> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Text(
-                  'Date: 30th Feb           Venue: LT201',
+                  widget.one.venue,
                   style: GoogleFonts.outfit(
                     color: kprimary.withBlue(150).withGreen(100),
                     fontSize: 15.0,

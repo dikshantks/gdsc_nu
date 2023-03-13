@@ -51,10 +51,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                         top: 30.0, left: 1.0),
-                                    child: Text(
-                                      "Hi, ${user.displayName!}",
-                                      style: GoogleFonts.roboto(
-                                        fontSize: 30.0,
+                                    child: RichText(
+                                      text: TextSpan(
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 25.0,
+                                          color: Colors.white70,
+                                        ),
+                                        children: [
+                                          const TextSpan(text: "Hi, "),
+                                          TextSpan(text: "${user.displayName}"),
+                                        ],
                                       ),
                                     ),
                                   ),

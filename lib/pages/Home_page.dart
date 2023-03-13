@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
 
@@ -29,6 +30,9 @@ class _HomePageState extends State<HomePage> {
         venue: "dgdfgdfgd");
 
     final provider = Provider.of<EventProvider>(context);
+    provider.getEvent();
+
+    final eventl = provider.getevents;
 
     return Scaffold(
       body: SafeArea(
@@ -91,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                           Padding(
                             padding: EdgeInsets.only(left: 10.0, top: 10.0),
                             child: Text(
-                              'Events',
+                              'Events ',
                               style: GoogleFonts.roboto(
                                 color: Colors.white70,
                                 fontWeight: FontWeight.w500,
@@ -112,15 +116,11 @@ class _HomePageState extends State<HomePage> {
               endIndent: 10,
             ),
             Expanded(
-                child: ListView(
+                child: ListView.builder(
+              itemCount: eventl.length,
+              itemBuilder: (context, index) => EventCard(one: eventl[index]),
               physics: BouncingScrollPhysics(),
-              children: [
-                EventCard(one: one),
-                EventCard(one: one),
-                EventCard(one: one),
-                EventCard(one: one),
-                EventCard(one: one),
-              ],
+             
             )),
           ],
         ),

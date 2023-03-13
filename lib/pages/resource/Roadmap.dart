@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:timeline_tile/timeline_tile.dart';
 
 class RoadMap extends StatefulWidget {
   const RoadMap({super.key});
@@ -16,6 +17,9 @@ class _RoadMapState extends State<RoadMap> {
       appBar: AppBar(
         title: Text("Intro to flutter"),
       ),
+      body: ListView(children: [
+        TimelineTile(),
+      ]),
     );
   }
 }
